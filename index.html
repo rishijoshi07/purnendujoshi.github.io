@@ -1,14 +1,451 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purnendu Joshi | Mainframe Capacity Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--primary:#2563eb;
+--secondary:#0f172a;
+--light:#f8fafc;
+--dark:#020617;
+--white:#ffffff;
+}
+
+body{
+background:#f1f5f9;
+color:#333;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+z-index:1000;
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:var(--primary);
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.hero{
+min-height:100vh;
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:50px;
+color:white;
+}
+
+.hero-content h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-content h2{
+font-weight:300;
+margin-bottom:20px;
+}
+
+.hero-content p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:white;
+color:#2563eb;
+font-weight:600;
+border-radius:5px;
+margin-top:25px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+section{
+padding:90px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+color:#0f172a;
+}
+
+.timeline{
+position:relative;
+margin-left:20px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:10px;
+top:0;
+width:4px;
+height:100%;
+background:#2563eb;
+}
+
+.timeline-item{
+padding-left:40px;
+margin-bottom:40px;
+position:relative;
+}
+
+.timeline-item::before{
+content:'';
+width:18px;
+height:18px;
+background:#2563eb;
+border-radius:50%;
+position:absolute;
+left:3px;
+top:5px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill{
+background:white;
+padding:20px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.project{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact{
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+.contact a{
+color:#60a5fa;
+text-decoration:none;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+background:#020617;
+color:white;
+}
+
+.dark-toggle{
+cursor:pointer;
+padding:10px 15px;
+border:none;
+border-radius:5px;
+background:#2563eb;
+color:white;
+}
+
+.dark-mode{
+background:#0f172a;
+color:white;
+}
+
+.dark-mode .card,
+.dark-mode .project,
+.dark-mode .skill{
+background:#1e293b;
+color:white;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:40px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <main>
-    <h1>Welcome</h1>
-    <p>This site is under construction.</p>
-  </main>
+
+<nav>
+<div class="nav-container">
+<div class="logo">PJ</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+<button class="dark-toggle" onclick="toggleTheme()">Theme</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Purnendu Joshi</h1>
+<h2>Mainframe Capacity Planner</h2>
+
+<p>
+Experienced Mainframe Capacity Planner specialising in
+IBM Z Systems, Performance Analysis, SAS/MXG,
+RMF, SYSVIEW, Mainview, WLM,
+Ansible Automation, GitHub and Python.
+Helping enterprises optimise CPU utilisation,
+capacity planning and operational efficiency.
+</p>
+
+<a href="#" class="btn">Download Resume</a>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+<p>
+Results-driven IT Professional with extensive experience
+in Mainframe Performance Monitoring, Capacity Planning,
+Automation and Reporting. Skilled in analysing workloads,
+improving performance metrics and delivering cost-saving
+recommendations for enterprise environments.
+</p>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="card">
+<h3>Ensono Technologies LLP</h3>
+<h4>Mainframe Capacity Planner</h4>
+<p>Jan 2024 – Present</p>
+<ul>
+<li>Performance Analysis and Capacity Planning</li>
+<li>SAS/MXG Reporting</li>
+<li>RMF / Mainview / SYSVIEW Monitoring</li>
+<li>WLM Configuration</li>
+<li>IBM Z Performance Optimisation</li>
+<li>Ansible Automation</li>
+</ul>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="card">
+<h3>Ensono Technologies LLP</h3>
+<h4>Associate Consultant</h4>
+<p>2021 – Jan 2024</p>
+
+<ul>
+<li>SAS/MXG Performance Reports</li>
+<li>CA7 Job Scheduling Support</li>
+<li>PDB Management</li>
+<li>PTF Deployments</li>
+<li>Mainframe Monitoring</li>
+</ul>
+
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="card">
+<h3>Atos Global IT Solutions</h3>
+<h4>Associate Engineer</h4>
+<p>2019 – 2020</p>
+
+<ul>
+<li>Ansible Automation</li>
+<li>GitHub Integration</li>
+<li>Syncsort Capacity Management</li>
+<li>SQL Administration</li>
+<li>ServiceNow Support</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill">IBM Z Mainframe</div>
+<div class="skill">SAS / MXG</div>
+<div class="skill">RMF</div>
+<div class="skill">SYSVIEW</div>
+<div class="skill">Mainview</div>
+<div class="skill">WLM</div>
+<div class="skill">CA7</div>
+<div class="skill">Ansible</div>
+<div class="skill">GitHub</div>
+<div class="skill">Python</div>
+<div class="skill">Linux</div>
+<div class="skill">TSO / ISPF</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+
+<h2 class="section-title">Projects & Achievements</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>Performance Reporting Automation</h3>
+<p>
+Automated daily SAS/MXG reporting to reduce manual effort and improve delivery timelines.
+</p>
+</div>
+
+<div class="project">
+<h3>AWX Automation Framework</h3>
+<p>
+Built Ansible AWX workflows for SMF validation and reporting automation.
+</p>
+</div>
+
+<div class="project">
+<h3>Capacity Analytics</h3>
+<p>
+Delivered CPU and storage optimisation recommendations for enterprise clients.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<h2 class="section-title" style="color:white;">
+Contact
+</h2>
+
+<p><strong>Email:</strong> rj070989@gmail.com</p>
+<p><strong>Phone:</strong> +91 7222070770</p>
+
+<p>
+<strong>LinkedIn:</strong>
+<a href="https://linkedin.com/in/purnendu-joshi-8ba307171">
+linkedin.com/in/purnendu-joshi-8ba307171
+</a>
+</p>
+
+</div>
+
+</section>
+
+<div class="footer">
+© 2025 Purnendu Joshi | Mainframe Capacity Planner
+</div>
+
+<script>
+
+function toggleTheme(){
+document.body.classList.toggle("dark-mode");
+}
+
+</script>
+
 </body>
 </html>
